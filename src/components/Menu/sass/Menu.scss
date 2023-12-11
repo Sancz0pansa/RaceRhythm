@@ -1,0 +1,45 @@
+body {
+    // overflow: hidden;
+}
+.menu {
+    width: 50%;
+    margin-top: 40vh;
+    padding-bottom: 20vh;
+
+    &__list {
+        list-style: none;
+
+        &--item {
+            display: flex;
+            transition: all 0.3s ease-in-out;
+            height: 30vh;
+            box-sizing: border-box;
+            align-items: start;
+        }
+    }
+}
+
+
+.fadeIn {
+    -webkit-animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  

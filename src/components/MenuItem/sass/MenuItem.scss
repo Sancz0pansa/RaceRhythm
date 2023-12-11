@@ -1,0 +1,18 @@
+
+
+.item {
+    font-size: 50px !important;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    text-align: start;
+}
+
+.selected {
+    font-size: 80px !important;
+    color: red;
+}
+
+.not {
+
+}
