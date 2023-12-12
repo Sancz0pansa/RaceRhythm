@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './sass/Menu.scss';
+import './sass/SelectMenu.scss';
 import { motion as m, AnimatePresence } from "framer-motion";
 import { MenuItem } from '../MenuItem/MenuItem.tsx';
 
@@ -8,33 +8,36 @@ const options = [
   {
     title: "Czas odcinka",
     describe: "application-with-cool-features",
-    id: "to-do-app",
+    id: "czas-odcinka",
   },
   {
     title: "Tempo biegu",
-    id: "product-catalog",
+    id: "tempo-biegu",
     describe: "application with cool features",
   },
   {
     title: "Długość Kroku",
-    id: "lawyers-ebsite",
+    id: "dlugosc-kroku",
     describe: "application with cool features",
   },
   {
     title: "Odległości",
-    id: "website-and-gallery",
+    id: "odleglosci",
     describe: "application with cool features",
   },
   {
     title: "Optymalnego Tempa Treningu",
-    id: "museum-website",
+    id: "OTT",
     describe: "application with cool features",
   },
 ];
 
+type Props = {
+  setInView: (prop:string) => void;
+  isInView: string;
+}
 
-
-export const Menu: React.FC = () => {
+export const SelectMenu: React.FC<Props> = ({setInView, isInView}) => {
   const layoutVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
@@ -42,10 +45,12 @@ export const Menu: React.FC = () => {
   };
     return (
       <div className='menu'>
+        
+        
         <ul className='menu__list'>
               {options.map((feature) => (
                 <li className="menu__list--item" key={feature.id}>
-                  <MenuItem id={feature.id}>
+                  <MenuItem id={feature.id} setInView={setInView} selectedView={isInView}>
                     {feature.title}
                     
                   </MenuItem>

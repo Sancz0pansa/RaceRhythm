@@ -1,7 +1,37 @@
+body {
+  background-color: #2BAE66;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+
 .App {
   text-align: center;
   width: 100%;
+  display: flex;
+
+  &__container {
+    position: fixed;
+    right: 0;
+    width: 50%;
+    padding-right: 20px;
+    
+
+    &--border {
+      border: 2px solid white;
+      border-radius: 30px;
+    }
+    &--logo {
+      background-image: url('images/Logo.png');
+  width: 80%;
+  height: 35vh;
+  margin: auto;
+  background-size: 100% 100%;
+    }
+  }
 }
+
+
 
 .App-logo {
   height: 40vmin;
