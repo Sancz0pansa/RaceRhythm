@@ -6,12 +6,12 @@ import { MenuItem } from '../MenuItem/MenuItem.tsx';
 
 const options = [
   {
-    title: "Czas odcinka",
+    title: "Czas Odcinka",
     describe: "application-with-cool-features",
     id: "czas-odcinka",
   },
   {
-    title: "Tempo biegu",
+    title: "Tempo Biegu",
     id: "tempo-biegu",
     describe: "application with cool features",
   },
@@ -26,7 +26,7 @@ const options = [
     describe: "application with cool features",
   },
   {
-    title: "Optymalnego Tempa Treningu",
+    title: "Optymalnego Tempa",
     id: "OTT",
     describe: "application with cool features",
   },

@@ -6,7 +6,7 @@ import './sass/MenuItem.scss';
 
 export const MenuItem = ({ children, id, setInView, selectedView}) => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { margin: "-42% 0px -42% 0px" });
+    const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
 //     const inViewFeature = useFeatureStore((state) => state.inViewfeature)
 
    useEffect(()=>{

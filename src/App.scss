@@ -4,6 +4,9 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 .App {
   text-align: center;
@@ -13,14 +16,21 @@ body {
   &__container {
     position: fixed;
     right: 0;
-    width: 50%;
+    width: 55%;
     padding-right: 20px;
     
 
     &--border {
-      border: 2px solid white;
-      border-radius: 30px;
-    }
+		padding: 2rem 1rem;
+		border: 1rem solid white;
+		// border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, white 6px, white 15px, transparent 16px, transparent 20px) 20/1rem;
+    // border-style: groove;
+    border-radius: 30px;
+    box-shadow: 10px 12px 5px 0px rgba(0,0,0,0.65);
+-webkit-box-shadow: 10px 12px 5px 0px rgba(0,0,0,0.65);
+-moz-box-shadow: 10px 12px 5px 0px rgba(0,0,0,0.65);
+	}
+    
     &--logo {
       background-image: url('images/Logo.png');
   width: 80%;
