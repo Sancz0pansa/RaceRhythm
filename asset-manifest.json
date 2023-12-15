@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/RaceRhythm/static/css/main.1bac8798.css",
+    "main.js": "/RaceRhythm/static/js/main.14fe7713.js",
+    "static/js/787.2b37a06f.chunk.js": "/RaceRhythm/static/js/787.2b37a06f.chunk.js",
+    "static/media/Logo.png": "/RaceRhythm/static/media/Logo.3a1c8207560ec8b15764.png",
+    "index.html": "/RaceRhythm/index.html",
+    "main.1bac8798.css.map": "/RaceRhythm/static/css/main.1bac8798.css.map",
+    "main.14fe7713.js.map": "/RaceRhythm/static/js/main.14fe7713.js.map",
+    "787.2b37a06f.chunk.js.map": "/RaceRhythm/static/js/787.2b37a06f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1bac8798.css",
+    "static/js/main.14fe7713.js"
+  ]
+}
