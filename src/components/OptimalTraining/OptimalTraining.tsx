@@ -1,10 +1,8 @@
 "use client"
 import React, { useState } from 'react'
-import { useInView } from 'framer-motion'
-// import './sass/SectionTime.scss';
 
 
-export const OptimalTraining = () => {
+export const OptimalTraining = ({lang}) => {
     const [minutes, setMinutes] = useState<string>('');
     const [seconds, setSeconds] = useState<string>('');
     const [percent, setPercent] = useState<string>('');
@@ -19,21 +17,22 @@ export const OptimalTraining = () => {
     const toSeconds = Math.round(((+toTimeInSeconds * (+percent / 100)) / 60 - toMinutes) * 60);
   return (
     <>
-    <p>Na podstawie osiągniętego tempa w testach biegowych, takich jak test Coopera, dowiesz się, jak intensywnie powinieneś prowadzić swoje treningi.</p>
+    <p>{lang === 'PL' ? 'Na podstawie osiągniętego tempa w testach biegowych, takich jak test Coopera, dowiesz się, jak intensywnie powinieneś prowadzić swoje treningi.' : 'Based on your pace in running tests, such as the Cooper test, you will learn how intensely you should run your training.'}</p>
 
-     <label>Uzyskane tempo biegu: <input
+     <label>{lang === 'PL' ? 'Uzyskane tempo biegu: ' : 'Running pace achieved: '}<input
      value={minutes}
      onChange={(e) => setMinutes(e.target.value)}
      />min 
      <input
      value={seconds}
      onChange={(e) => setSeconds(e.target.value)}
-     />sek / km</label>
-     <label>Procentowy wskaźnik docelowego tempa: <input
+     />{lang === 'PL' ? 'sek' : 'sec'} / km</label>
+     <label>{lang === 'PL' ? 'Procentowy wskaźnik docelowego tempa: ' : 'Target Pace Percentage: '}<input
      value={percent}
      onChange={(e) => setPercent(e.target.value)}
      /> %</label>
-     <p className='result'>Sugerowane tempo: od {fromMinutes !== 0 ? fromMinutes : '--'}' {fromSeconds !== 0 ? fromSeconds : '--'}" / km | do {toMinutes !== 0 ? toMinutes : '--'}' {toSeconds !== 0 ? toSeconds : '--'}" / km"</p>
+     <p className='result'>{lang === 'PL' ? 'Sugerowane tempo: ' : `
+Suggested pace: `}{lang === 'PL' ? 'od' : 'from'} {fromMinutes !== 0 ? fromMinutes : '--'}' {fromSeconds !== 0 ? fromSeconds : '--'}" / km | {lang === 'PL' ? 'do' : 'to'} {toMinutes !== 0 ? toMinutes : '--'}' {toSeconds !== 0 ? toSeconds : '--'}" / km</p>
      </>
   )
 }

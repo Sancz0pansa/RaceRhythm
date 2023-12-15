@@ -1,10 +1,8 @@
 "use client"
 import React, { useState } from 'react'
-import { useInView } from 'framer-motion'
-// import './sass/SectionTime.scss';
 
 
-export const Pace = () => {
+export const Pace = ({lang}) => {
     const [hours, setHours] = useState<string>('');
     const [minutes, setMinutes] = useState<string>('');
     const [seconds, setSeconds] = useState<string>('');
@@ -23,10 +21,11 @@ export const Pace = () => {
     
   return (
     <>
-    <p>Z pomocą kalkulatora Tempa Biegu możesz ustalić,
-         jakie jest niezbędne tempo Twojego biegu do osiągnięcia zaplanowanego rezultatu na określonym dystansie.</p>
+    <p>{lang === 'PL' ? `Z pomocą kalkulatora Tempa Biegu możesz ustalić,
+         jakie jest niezbędne tempo Twojego biegu do osiągnięcia zaplanowanego rezultatu na określonym dystansie.` : `With the help of the Running Pace calculator you can determine
+         what is the necessary pace of your run to achieve the planned result over a specific distance.`}</p>
 
-     <label>Dystans: <input
+     <label>{lang === 'PL' ? 'Dystans: ' : 'Distance: '}<input
      value={kilometers}
      onChange={(e) => setKilometers(e.target.value)}
      />km 
@@ -34,7 +33,7 @@ export const Pace = () => {
      value={meters}
      onChange={(e) => setMeters(e.target.value)}
      />m</label>
-     <label>Planowany wynik: <input
+     <label>{lang === 'PL' ? 'Planowany wynik: ' : 'Planned result: '}<input
      value={hours}
      onChange={(e) => setHours(e.target.value)}
      /> h 
@@ -45,9 +44,9 @@ export const Pace = () => {
      <input
      value={seconds}
      onChange={(e) => setSeconds(e.target.value)}
-     /> sec
+     /> {lang === 'PL' ? 'sek' : 'sec'}
      </label>
-     <p className='result'>Tempo: {isNaN(paceMin) ? '--' : paceMin.toFixed(0)}' {isNaN(paceSec) ? '--' : paceSec.toFixed(0)}" / km | Prędkość: {isNaN(speed) || !isFinite(speed) ? '--' : speed.toFixed(2)} km/h</p>
+     <p className='result'>{lang === 'PL' ? 'Tempo: ' : 'Pace: '}{isNaN(paceMin) ? '--' : paceMin.toFixed(0)}' {isNaN(paceSec) ? '--' : paceSec.toFixed(0)}" / km | {lang === 'PL' ? 'Prędkość: ' : 'Speed: '}{isNaN(speed) || !isFinite(speed) ? '--' : speed.toFixed(2)} km/h</p>
      </>
   )
 }

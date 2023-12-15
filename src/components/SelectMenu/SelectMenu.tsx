@@ -3,80 +3,60 @@ import React from 'react';
 import './sass/SelectMenu.scss';
 import { motion as m, AnimatePresence } from "framer-motion";
 import { MenuItem } from '../MenuItem/MenuItem.tsx';
+import { Lang } from '../../types/Lang.ts';
 
 const options = [
   {
     title: "Czas Odcinka",
-    describe: "application-with-cool-features",
+    titleEN: "Section Time",
     id: "czas-odcinka",
   },
   {
     title: "Tempo Biegu",
     id: "tempo-biegu",
-    describe: "application with cool features",
+    titleEN: "Run Pace",
   },
   {
     title: "Długość Kroku",
     id: "dlugosc-kroku",
-    describe: "application with cool features",
+    titleEN: "Step Length",
   },
   {
     title: "Odległości",
     id: "odleglosci",
-    describe: "application with cool features",
+    titleEN: "Distance",
   },
   {
     title: "Optymalnego Tempa",
     id: "OTT",
-    describe: "application with cool features",
+    titleEN: "Optimal Pace",
   },
 ];
 
 type Props = {
   setInView: (prop:string) => void;
-  isInView: string;
+  lang: Lang;
 }
 
-export const SelectMenu: React.FC<Props> = ({setInView, isInView}) => {
-  const layoutVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-  };
+export const SelectMenu: React.FC<Props> = ({setInView, lang}) => {
+
     return (
       <div className='menu'>
         
         
         <ul className='menu__list'>
-              {options.map((feature) => (
-                <li className="menu__list--item" key={feature.id}>
-                  <MenuItem id={feature.id} setInView={setInView} selectedView={isInView}>
-                    {feature.title}
+              {options.map((option) => (
+                <li className="menu__list--item" key={option.id}>
+                  <MenuItem id={option.id} setInView={setInView}>
+                    {lang === 'PL' ? option.title : option.titleEN}
                     
                   </MenuItem>
                 </li>
               ))}
             </ul>
-      {/* <AnimatePresence exitBeforeEnter={false} initial={false}>
-        {options.map((option) => (
-          <m.div
-            key={option.id}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={layoutVariants}
-            transition={{ duration: 0.75 }}
-            className="menu__item fadeIn"
-          >
-            {option.title}
-          </m.div>
-        ))}
-      </AnimatePresence> */}
+
     </div>
       
 
-      // <ul className='menu'>
-      //   {options.map((option) => (<li key={option.id} className='menu__item fadeIn'>{option.title}</li>))}
-        
-      // </ul>
+
 )};

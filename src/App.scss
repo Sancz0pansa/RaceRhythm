@@ -8,6 +8,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.lang {
+  position: fixed;
+  right: 30px;
+  top: 5px;
+  z-index: 1;
+}
+
 .App {
   text-align: center;
   width: 100%;
@@ -17,7 +24,7 @@ html {
     position: fixed;
     right: 0;
     width: 55%;
-    padding-right: 20px;
+    padding-right: 30px;
     
 
     &--border {

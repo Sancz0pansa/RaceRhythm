@@ -6,20 +6,26 @@ import { StepLength } from '../StepLength/StepLength.tsx';
 import { Distance } from '../Distance/Distance.tsx';
 import './sass/Calculator.scss';
 import { OptimalTraining } from '../OptimalTraining/OptimalTraining.tsx';
+import { Lang } from '../../types/Lang.ts';
 
-export const Calculator = ({ isInView }) => {
+type Props = {
+  isInView: string;
+  lang: Lang;
+}
+
+export const Calculator: React.FC<Props> = ({ isInView, lang }) => {
   const getComponent = () => {
     switch (isInView) {
       case 'czas-odcinka':
-        return <SectionTime />;
+        return <SectionTime lang={lang} />;
       case 'tempo-biegu':
-        return <Pace />;
+        return <Pace  lang={lang}/>;
       case 'dlugosc-kroku':
-        return <StepLength />;
+        return <StepLength  lang={lang}/>;
       case 'odleglosci':
-        return <Distance />;
+        return <Distance  lang={lang}/>;
       case 'OTT':
-        return <OptimalTraining />;
+        return <OptimalTraining  lang={lang}/>;
       default:
         return null;
     }
@@ -35,7 +41,7 @@ export const Calculator = ({ isInView }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             {getComponent()}
           </motion.div>
