@@ -1,7 +1,6 @@
 
 import React from 'react';
 import './sass/SelectMenu.scss';
-import { motion as m, AnimatePresence } from "framer-motion";
 import { MenuItem } from '../MenuItem/MenuItem.tsx';
 import { Lang } from '../../types/Lang.ts';
 
@@ -42,8 +41,6 @@ export const SelectMenu: React.FC<Props> = ({setInView, lang}) => {
 
     return (
       <div className='menu'>
-        
-        
         <ul className='menu__list'>
               {options.map((option) => (
                 <li className="menu__list--item" key={option.id}>
@@ -54,9 +51,5 @@ export const SelectMenu: React.FC<Props> = ({setInView, lang}) => {
                 </li>
               ))}
             </ul>
-
     </div>
-      
-
-
 )};
