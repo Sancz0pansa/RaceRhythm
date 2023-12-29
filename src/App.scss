@@ -8,6 +8,36 @@ html {
   scroll-behavior: smooth;
 }
 
+.login {
+  position: fixed;
+  left: 120px;
+  top: 10px;
+  z-index: 1;
+  display: flex;
+  font-weight: 700;
+  font-size: 18px;
+
+  & span {
+    color: black;
+  }
+  &__button {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: 3px solid white;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    transition: color, background-color 0.5s ;
+    cursor: pointer;
+    min-width: 97px;
+    &:hover {
+      color: #2BAE66;
+      background-color: white;
+    }
+  }
+}
+
 .control {
   position: fixed;
   right: 30px;
