@@ -45,6 +45,13 @@
         &--p {
             font-size: 13px;
 
+            &-red {
+              color: black;
+              margin-top: 5px;
+              margin-bottom: 0;
+              font-size: 16px;
+            }
+
             & a {
                 color: white;
                 font-size: 15px;

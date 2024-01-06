@@ -10,7 +10,13 @@ export const Login = ({lang, loginVisible, setUsername, setLoggedin, setLoginVis
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
+    const [showError, setShowError] = useState<boolean>(false);
+    let timer;
 
+   
+    useEffect(() => {
+      return clearTimeout(timer);
+    })
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -37,13 +43,15 @@ export const Login = ({lang, loginVisible, setUsername, setLoggedin, setLoginVis
       setPassword('');
       setLoginVisible(false);
       setLoggedin(true);
-    } else {
-
-    }
+    } 
     
     
   })
   .catch(error => {
+    setShowError(true);
+      timer = setTimeout(()=> {
+        setShowError(false);
+      }, 3000)
     console.error(error);
   });
           break;
@@ -60,6 +68,8 @@ export const Login = ({lang, loginVisible, setUsername, setLoggedin, setLoginVis
             <label htmlFor="password">{lang === 'PL' ? 'Hasło:' : 'Password:'}
             </label>
             <input className='login-container__form--text' name='password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+            <p className='login-container__form--p-red'>{showError && (lang === 'PL' ? 'Nie prawidłowy login lub hasło' : 'Invalid login or password')}</p>
+            
             {registerMode && <><label htmlFor="password">E-mail:
             </label>
             <input className='login-container__form--text' name='email' type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/></>}
