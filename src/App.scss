@@ -17,6 +17,10 @@ html {
   font-weight: 700;
   font-size: 18px;
 
+  &.loggedin {
+    left: 15px;
+  }
+
   & span {
     color: black;
   }
@@ -24,6 +28,7 @@ html {
     background-color: transparent;
     color: white;
     font-size: 18px;
+    margin-left: 10px;
     font-weight: 700;
     border: 3px solid white;
     border-radius: 10px;

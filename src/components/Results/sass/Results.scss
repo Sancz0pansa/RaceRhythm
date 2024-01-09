@@ -1,0 +1,22 @@
+.App {
+
+    &__back {
+        border-radius: 20px;
+        font-size: 60px;
+        position: fixed;
+        left: 20px;
+        & svg {
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+            
+        &:hover {
+            scale: 1.2;
+            
+        }
+        }
+        
+    }
+    
+}
+
