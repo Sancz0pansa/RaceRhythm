@@ -27,6 +27,8 @@ export const Homepage: React.FC<Props> = ({setLang, lang}) => {
         setLoggedin(true);
     }
   }, [])
+
+  console.log(true)
   
   return (
     <div className="App">
