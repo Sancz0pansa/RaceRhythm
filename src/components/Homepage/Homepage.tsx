@@ -28,7 +28,8 @@ export const Homepage: React.FC<Props> = ({setLang, lang}) => {
     }
   }, [])
 
-  
+  console.log(true)
+
   return (
     <div className="App">
       <div className={`login ${loggedin && 'loggedin'}`}>{loggedin ? <div>{lang === 'PL' ? 'Cześć': 'Hello'}, <span>{username}</span> ! <button onClick={()=> {setLoggedin(false); sessionStorage.setItem('isLoggedIn', 'false');}} className='login__button'>{lang === 'PL' ? 'Wyloguj się' : "Logout"}</button><button onClick={()=> navigate('/results')} className='login__button'>{lang === 'PL' ? 'Wyniki' : "Results"}</button></div>
