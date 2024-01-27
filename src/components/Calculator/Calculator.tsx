@@ -31,6 +31,8 @@ export const Calculator: React.FC<Props> = ({ isInView, lang }) => {
     }
   };
 
+
+  
   return (
     <div className='calculator'>
       <AnimatePresence mode='wait'>
