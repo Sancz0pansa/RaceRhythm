@@ -28,6 +28,8 @@ export const Homepage: React.FC<Props> = ({setLang, lang}) => {
     }
   }, [])
 
+  console.log(true)
+
 
   return (
     <div className="App">
